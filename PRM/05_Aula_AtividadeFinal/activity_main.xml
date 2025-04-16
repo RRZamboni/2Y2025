@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#A3CEE1"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/titulo"
+        android:layout_width="378dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="20dp"
+        android:shadowColor="#82ACC2"
+        android:text="Selecione seu exercício"
+        android:textAlignment="center"
+        android:textColor="#222D6C"
+        android:textSize="35sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnCorrida"
+        android:layout_width="166dp"
+        android:layout_height="73dp"
+        android:layout_marginStart="127dp"
+        android:layout_marginTop="5dp"
+        android:backgroundTint="#222D6C"
+        android:text="Corrida! 🏃"
+        android:textAlignment="center"
+        android:textSize="22sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titulo" />
+
+    <Button
+        android:id="@+id/btnCiclismo"
+        android:layout_width="166dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="126dp"
+        android:layout_marginTop="2dp"
+        android:backgroundTint="#202A66"
+        android:text="Ciclismo! 🚴"
+        android:textAlignment="center"
+        android:textSize="21sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnCorrida" />
+
+    <Button
+        android:id="@+id/btnNatacao"
+        android:layout_width="166dp"
+        android:layout_height="66dp"
+        android:layout_marginStart="127dp"
+        android:layout_marginTop="2dp"
+        android:backgroundTint="#222D6C"
+        android:text="Natação! 🏊"
+        android:textAlignment="center"
+        android:textSize="21sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnCiclismo" />
+
+    <Button
+        android:id="@+id/btnMusulacao"
+        android:layout_width="200dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="111dp"
+        android:layout_marginTop="2dp"
+        android:backgroundTint="#222D6C"
+        android:text="Musculação! 🏋️"
+        android:textAlignment="center"
+        android:textSize="21sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnNatacao" />
+
+    <TextView
+        android:id="@+id/Texto1"
+        android:layout_width="376dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="10dp"
+        android:text="Selecione o tempo do seu exercício "
+        android:textAlignment="center"
+        android:textColor="#222D6C"
+        android:textSize="24sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnMusulacao" />
+
+    <TextView
+        android:id="@+id/Texto2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="105dp"
+        android:layout_marginTop="1dp"
+        android:text="(Estimativa em minutos)"
+        android:textAlignment="center"
+        android:textColor="#605F5F"
+        android:textSize="19sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Texto1" />
+
+    <SeekBar
+        android:id="@+id/seekBar"
+        android:layout_width="379dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="6dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Texto2" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="165dp"
+        android:layout_marginTop="4dp"
+        android:text="................"
+        android:textSize="24sp"
+        android:textStyle="italic"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seekBar" />
+
+    <Switch
+        android:id="@+id/switch1"
+        android:layout_width="217dp"
+        android:layout_height="62dp"
+        android:layout_marginStart="109dp"
+        android:layout_marginTop="13dp"
+        android:text="Modo Intenso"
+        android:textColor="#222D6C"
+        android:textSize="26sp"
+        android:textStyle="bold|italic"
+        android:thumbTint="#222D6C"
+        android:trackTint="#264E6E"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+    <Button
+        android:id="@+id/btnCalcular"
+        android:layout_width="138dp"
+        android:layout_height="63dp"
+        android:layout_marginStart="155dp"
+        android:layout_marginTop="13dp"
+        android:backgroundTint="#222D6C"
+        android:text="Calcular"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/switch1" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
