@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity
 {
@@ -19,6 +20,7 @@ public class MainActivity extends AppCompatActivity
 
     //Valor da Seek Bar!!!!
     int valor;
+    double kcal;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -48,7 +50,7 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View view)
             {
                 //Variavel para definir kcal/min
-                double kcalCorrida = 10;
+                kcal = 10;
             }
         });
 
@@ -60,7 +62,7 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View view)
             {
                 //Variavel para definir kcal/min
-                double kcalNatacao = 9;
+                kcal = 9;
 
             }
         });
@@ -72,7 +74,7 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View view)
             {
                 //Variavel para definir kcal/min
-                double kcalMusculacao = 5;
+                kcal = 5;
             }
         });
 
@@ -83,7 +85,7 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View view)
             {
                 //Variavel para definir kcal/min
-                double kcalCiclismo = 7;
+                kcal = 7;
             }
         });
 
@@ -109,6 +111,50 @@ public class MainActivity extends AppCompatActivity
             {
                 //Mostrando o valor
                 valorSeekBar.setText("%"+valor);
+            }
+        });
+
+        /////Botao calcular
+        btnCalcular.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)
+            {
+                if(swIntenso.isChecked())
+                {
+                    //Calculo
+                    double ValorFinal = valor * kcal;
+
+                    //Add 20%
+                    ValorFinal = ValorFinal + (ValorFinal * 0.2);
+
+                    Toast.makeText(MainActivity.this,
+                       "Total de Calorias gastas é: " + ValorFinal,
+                            Toast.LENGTH_LONG).show();
+                }
+                else
+                {
+                    //Calculo
+                    double ValorFinal = valor * kcal;
+
+                    //Mostrando o valor
+                    Toast.makeText(MainActivity.this,
+                            "Seu gasto foi: " + ValorFinal,
+                            Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+
+
+        // Clique longo botão corrida
+        btnCorrida.setOnLongClickListener(new View.OnLongClickListener()
+        {
+            @Override
+            public boolean onLongClick(View v)
+            {
+                Toast.makeText(MainActivity.this,
+                              "Corrida melhora o condicionamento e queima muitas calorias!",
+                              Toast.LENGTH_LONG ).show();
+                return true;
             }
         });
 
