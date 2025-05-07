@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/titulo"
+        android:layout_width="284dp"
+        android:layout_height="118dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="28dp"
+        android:text="ArrayList do meu amor!!!"
+        android:textAlignment="center"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="282dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mensagem" />
+
+    <TextView
+        android:id="@+id/mensagem"
+        android:layout_width="210dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="36dp"
+        android:text="Escolha seu artista favorito, \n seu otário:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titulo" />
+
+    <TextView
+        android:id="@+id/textoArtista"
+        android:layout_width="267dp"
+        android:layout_height="140dp"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="72dp"
+        android:text="..."
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imagem" />
+
+    <ImageView
+        android:id="@+id/imagem"
+        android:layout_width="172dp"
+        android:layout_height="135dp"
+        android:layout_marginStart="119dp"
+        android:layout_marginTop="39dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner"
+        app:srcCompat="@drawable/ic_launcher_foreground" />
+</androidx.constraintlayout.widget.ConstraintLayout>
