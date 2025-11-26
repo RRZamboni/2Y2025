@@ -36,6 +36,19 @@ public class MainActivity extends AppCompatActivity
         //Abrindo o BD
         AbrirCriarBD();
 
+        //btnSalvar
+        btnSalvar.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                Salvar();
+
+            }
+        });
+
+    }
+
     public void AbrirCriarBD()
     {
         //1) Variável para receber a query
@@ -77,7 +90,36 @@ public class MainActivity extends AppCompatActivity
 
     public void Salvar()
     {
-        
+        //Iniciando os EditText
+        txtNome = (EditText) findViewById(R.id.txtNome);
+        txtCurso = (EditText) findViewById(R.id.txtCurso);
+
+        //Var.p/ query
+        String sql;
+
+        try
+        {
+            //Criando a query
+            sql = "INSERT INTO Alunos(Nome,Curso)VALUES(" +
+                    "'"+txtNome.getText().toString()+"'," +
+                    "'"+txtCurso.getText().toString()+"')";
+
+            //Executar a query, colocamos tdo o query aq dentro pela variável sql
+            dbShow.execSQL(sql);
+
+            //Mens de sucesso
+            Toast.makeText(MainActivity.this,
+                    "Alunos Cadstrados com Sucesso! bjus",
+                    Toast.LENGTH_LONG).show();
+        }
+        catch (Exception erro)
+        {
+            //Mens de Erro
+            Toast.makeText(MainActivity.this,
+                        "Erro ao cadastrar aluno. " +
+                            erro.getMessage(),
+                            Toast.LENGTH_LONG).show();
+        }
     }
 
 
